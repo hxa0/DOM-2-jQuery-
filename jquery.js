@@ -22,7 +22,7 @@ window.jQuery = function(selectorOrArrayOrTemplate) {
         // api 可以操作elements
 
 
-    // api.elements = elements
+    // api.elements = elements//后面有用到
     // api.oldApi = selectorOrArrayOrTemplate.oldApi //特有的属性放到自己身上
     // return api
     //以上三行代码写成以下格式
@@ -32,8 +32,8 @@ window.jQuery = function(selectorOrArrayOrTemplate) {
     })
 
 };
-
-
+//注意，以下代码中elements不能直接使用，超出了作用域；所有涉及elements的写成this.elements
+//api里面的elements属性值就是前面的elements，已经声明了
 jQuery.fn = jQuery.prototype = {
     jquery: true,
     constructor: jQuery,
